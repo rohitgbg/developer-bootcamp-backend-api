@@ -4,13 +4,18 @@ const dotevn = require("dotenv");
 //Routes files
 const bootcamps = require("./routes/bootcamps");
 
+//Middleware files
+const logger = require("./middleware/logger");
+
 //load env file
 dotevn.config({ path: "./config/config.env" });
 
 const app = express();
 
-// Mount routes
+//middleware
+app.use(logger);
 
+// Mount routes
 app.use("/api/v1/bootcamps", bootcamps);
 
 const PORT = process.env.PORT || 5000;
