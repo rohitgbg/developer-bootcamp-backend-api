@@ -14,6 +14,7 @@ connectDB();
 
 //Routes files
 const bootcamps = require("./routes/bootcamps");
+const courses = require("./routes/courses");
 
 //Middleware files
 const logger = require("./middleware/logger");
@@ -31,6 +32,8 @@ if (process.env.NODE_ENV === "development") {
 
 // Mount routes
 app.use("/api/v1/bootcamps", bootcamps);
+app.use("/api/v1/courses", courses);
+
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
