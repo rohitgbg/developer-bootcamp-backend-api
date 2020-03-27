@@ -142,7 +142,6 @@ BootcampSchema.pre("save", function(next) {
 // Jusing address to generate location object
 BootcampSchema.pre("save", async function(next) {
   const loc = await geocoder.geocode(this.address);
-  console.log("location", loc);
 
   this.location = {
     type: "Point",
