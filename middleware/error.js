@@ -7,7 +7,7 @@ const errorHandler = (err, req, res, next) => {
 
   error.message = err.message;
 
-  console.log(err);
+  console.log("ERRor", err);
 
   // if id not found
   if (err.name === "CastError") {
