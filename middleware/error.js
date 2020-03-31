@@ -11,7 +11,7 @@ const errorHandler = (err, req, res, next) => {
 
   // if id not found
   if (err.name === "CastError") {
-    error = new ErrorResponse(`Resource not found with id ${err.value}`, 404);
+    error = new ErrorResponse(`Resource not found`, 404);
   }
 
   // duplicate field error
